@@ -1,0 +1,3 @@
+SevenSegShift	KEYWORD1
+setVal	KEYWORD2
+serial2seg	KEYWORD2

@@ -1,6 +1,6 @@
 /*
     This is a basic library for arduino. It uses a shift
-    register to display a value on a common annode
+    register to display a value on a common annode or cathode
     7-segment LED display
 */
 #ifndef SevenSegShift_h

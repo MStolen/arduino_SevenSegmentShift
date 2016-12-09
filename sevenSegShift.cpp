@@ -1,6 +1,6 @@
 #include "Arduino.h"
 #include "sevenSegShift.h"
-#include <avr/pgmspace.h>
+//#include <avr/pgmspace.h>
 
 SevenSegShift::SevenSegShift(int dataPin, int clockPin, int latchPin, Common common) {
 

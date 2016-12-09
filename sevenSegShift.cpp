@@ -1,6 +1,5 @@
 #include "Arduino.h"
 #include "sevenSegShift.h"
-//#include <avr/pgmspace.h>
 
 SevenSegShift::SevenSegShift(int dataPin, int clockPin, int latchPin, Common common) {
 
@@ -21,14 +20,10 @@ void SevenSegShift::setVal(int hexNum) {
     //set values for common annode display
     //0 is MSB and dp(always off) is LSB
     static const byte SEGCONST[17]={0x03,0x9F,0x25,0x0D,0x99,0x49,0x41,0x1F,0x01,0x09,0x11,0xC1,0x63,0x85,0x61,0x71,0xFC};
-    // w/o flash mem ^
-    //{0,1,...,9,A,...,F,'-'}
-    
-    //static const PROGMEM byte SEGCONST[17]={0x03,0x9F,0x25,0x0D,0x99,0x49,0x41,0x1F,0x01,0x09,0x11,0xC1,0x63,0x85,0x61,0x71,0xFC};
-    // with flash mem ^
+	
     static byte dataOut; //data to send to shift register
-    dataOut=SEGCONST[hexNum]; // w/o stored in flash
-    //dataOut=pgm_read_byte_near(SEGCONST+hexNum); // w/flash
+    dataOut=SEGCONST[hexNum];
+	
     if (_common==CATHODE) {
         dataOut=~dataOut;
     }
